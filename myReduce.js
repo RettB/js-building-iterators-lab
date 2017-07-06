@@ -5,7 +5,29 @@ function myReduce(arr, callback) {
 
 //  CODE INSIDE HERE   //
 
+// THIS ONE STILL NEEDS SOME WORK AND I NEED SOME HELP!!
+
+switch(typeof arr[0]) {
+	case "string": accumulator = ""; break;
+	case "number": accumulator = 0; break;
 }
+
+for(i=0; i < arr.length; i++) {
+	accumulator = callback(accumulator, arr[i]);
+	console.log(accumulator);
+}
+
+return accumulator;
+
+}
+
+var arr = [0, 1, 2];
+
+function sum(previous, current) {
+	return current + previous;
+}
+
+myReduce(arr, sum);
 
 /*
  Best if you don't code out here.

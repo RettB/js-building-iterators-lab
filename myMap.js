@@ -4,7 +4,23 @@ function myMap(arr, callback) {
 
 //  CODE INSIDE HERE   //
 
+var transformedArray = [];
+
+	for(i = 0; i < arr.length; i++) {
+		var transformedValue = callback(arr[i], i, arr);
+		transformedArray.push(transformedValue);
+	}
+	console.log(transformedArray);
+	return transformedArray;
+	
 }
+
+var originalArray = [1,2,3,4];
+function addOne(number) {
+	return 1 + number;
+}
+
+myMap(originalArray, addOne);
 
 /*
  Best if you don't code out here.
